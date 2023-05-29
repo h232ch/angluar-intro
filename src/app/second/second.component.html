@@ -1,0 +1,10 @@
+<p>second works!</p>
+
+<!--<app-child [animal]="myAnimal"></app-child>-->
+<!--<p>second page (second parent -> child) : {{ myAnimal }}</p>-->
+
+<app-child [animal]="myAnimal"
+(changed)="childChanged($event)"></app-child>
+<p> parent page (second child -> parent) : {{ childAnimal }} </p>
+
+<input type="text" [(ngModel)]="name" />

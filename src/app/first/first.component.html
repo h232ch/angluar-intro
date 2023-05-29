@@ -1,0 +1,102 @@
+<p>first works!</p>
+<!-- variable binding -->
+<h3>Hi {{ name }}</h3>
+<p>Today is {{ today }}</p>
+
+
+<!-- name change -->
+<button (click)="name='new'">Change Name</button><br>
+
+<!-- CSS directive -->
+<h3 [ngStyle]="{'background-color': 'green'}">My color is green</h3>
+<h3 [ngStyle]="{'background-color': myColor}">My color will be changed</h3>
+
+
+<!-- function binding -->
+<button (click)="btnConsoleLog()">Check Console Log</button><br>
+<button (click)="btnChangeColor('things I wanted')">Change Color</button><br>
+<button (click)="btnCounter()">Counter+</button>
+<button (click)="btnInitCounter()">Init Counter</button><br>
+
+<h3> {{ counter }} </h3>
+
+<!-- directive -->
+<div style="text-align: center">
+  <div *ngFor="let person of peopleLocal">
+    <h4 *ngIf="person.age > 30">
+      {{ person.name }} is {{ person.age }} years old.
+    </h4>
+  </div>
+</div>
+
+<div style="text-align: center">
+  <div *ngFor="let person of peopleLocal">
+    <h4 *ngIf="counter > 2">
+      {{ person.name }} is {{ person.age }} years old. (ngif counter)
+    </h4>
+  </div>
+</div>
+
+<div style="text-align: center">
+  <div *ngFor="let person of peopleLocal">
+<!--    <h3 [ngClass]="{'red': true}" >-->
+    <h4 [ngClass]="{'red': person.age == 24 || person.age > 50}" >
+      {{ person.name }} is {{ person.age }} years old (color change)
+    </h4>
+  </div>
+</div>
+
+
+<!-- Service -->
+
+<div style="text-align: center">
+  <div *ngFor="let person of people">
+    <h4>{{ person.name }} is {{ person.age }} years old (Service)</h4>
+  </div>
+</div>
+
+<!-- pipe -->
+
+<h1>
+  my name is {{ name | uppercase}}
+</h1>
+
+<h1>
+  my name is {{ name | lowercase}}
+</h1>
+
+<h1>
+  my name is {{ name }}
+</h1>
+
+<h3> {{ today | date }} </h3>
+<h3> {{ today | date:"short" }} </h3>
+<h3> {{ today | date:"long" }} </h3>
+<h3> {{ today | date:"full" }} </h3>
+<h3> {{ today | date:"fullDate" }} </h3>
+<h3> {{ today | date:"dd/MM/yyyy:H:m:s" }} </h3>
+
+
+<h3> {{ cash | currency }} </h3>
+<h3> {{ cash | currency: "EUR" }} </h3>
+
+
+<p>=========================</p>
+
+<!-- form control -->
+
+<!--<form [formGroup]="ourForm" (ngSubmit)="sendForm()">-->
+<!--  <label>Name : </label>-->
+<!--  <input type="text" formControlName="name" /> <br>-->
+
+<!--  <label>Sur : </label>-->
+<!--  <input type="text" formControlName="surname" /> <br>-->
+
+<!--  <button type="submit">send</button>-->
+<!--</form>-->
+
+<!--{{ ourForm.value.name }}-->
+<!--{{ ourForm.value.surname }}-->
+<!--{{ ourForm.value | json }}-->
+
+
