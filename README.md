@@ -1,6 +1,10 @@
 # AngluarIntro
 
 Angular basic
+ - component, routing
+ - binding, directive, css, pipe
+ - service, observable
+ - binding (one way, two way)
 
 ## Development server
 
